@@ -1,0 +1,50 @@
+﻿@model IEnumerable<LOLMVC.Champion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+    <h1>Champions</h1>
+
+    <p>
+        <a asp-action="Create">Add new Champion</a>
+    </p>
+</div>
+
+
+<div class="container text-center bg-info">
+    <div class="champions row">
+        @if (Model.Count() == 0)
+        {
+            <p class="no-match-txt">No match to any documents</p>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                string imagePath = $@"{item.ChampImage}";
+                <div class="col-4">
+                    <div class="card-deck">
+                        <a class="champion-card-link" asp-controller="ChampStats" asp-action="Details" asp-route-id="@item.ChampId">
+                            <div class="card m-3">
+                                <img class="card-img-top" src=@imagePath alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.ChampName)</h5>
+                                    <p class="card-text lore-text">@Html.DisplayFor(modelItem => item.Lore)</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Role: @Html.DisplayFor(modelItem => item.ChampRole)</li>
+                                    <li class="list-group-item">Price: @Html.DisplayFor(modelItem => item.ChampPrice)</li>
+                                    <li class="list-group-item">Resource used: @Html.DisplayFor(modelItem => item.ChampResource)</li>
+                                </ul>
+                                <div class="card-footer">
+                                    <span>Release date: @Html.DisplayFor(modelItem => item.ChampReleaseDate)</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

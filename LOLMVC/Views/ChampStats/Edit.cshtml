@@ -1,0 +1,59 @@
+﻿@model LOLMVC.ChampStat
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ChampStat</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StatId" />
+            <div class="form-group">
+                <label asp-for="ChampId" class="control-label"></label>
+                <select asp-for="ChampId" class="form-control" asp-items="ViewBag.ChampId"></select>
+                <span asp-validation-for="ChampId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WinRate" class="control-label"></label>
+                <input asp-for="WinRate" class="form-control" />
+                <span asp-validation-for="WinRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PickRate" class="control-label"></label>
+                <input asp-for="PickRate" class="form-control" />
+                <span asp-validation-for="PickRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BanRate" class="control-label"></label>
+                <input asp-for="BanRate" class="form-control" />
+                <span asp-validation-for="BanRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tier" class="control-label"></label>
+                <input asp-for="Tier" class="form-control" />
+                <span asp-validation-for="Tier" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LanePlayed" class="control-label"></label>
+                <input asp-for="LanePlayed" class="form-control" />
+                <span asp-validation-for="LanePlayed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

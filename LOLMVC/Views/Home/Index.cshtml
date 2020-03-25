@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-fluid main-page-info text-center bg-info p-5">
+    <h1 class="display-2">Welcome to the LOL database</h1>
+    <p class="subtitle"><b>Learn more about champions and their match statistics.</b></p>
+    <p class="mt-5 text-center">Already know what you want? Click the button or use the navigation bar to get started!</p>
+    <a class="btn btn-success btn-lg mb-5 mx-auto" asp-area="" asp-controller="Champions" asp-action="Index">Champions</a>
+    <div class="row mt-5">
+        <div class="col-6 w-25">
+            <h4 class="mb-3">What is League of Legends?</h4>
+            <p><b>League of Legends</b> is a team-based strategy game where two teams of five powerful champions face off to destroy the other’s base.
+            Choose from over 140 champions to make epic plays, secure kills, and take down towers as you battle your way to <b>victory</b>.</p>
+
+            <p>
+                <b>League of Legends</b> is a from a genre of games called <b>MOBA</b> (Multiplayer online battle arena).
+                These games are a subgenre of strategy video games that originated from real-time strategy games.
+            </p>
+
+            <p>Whether you're playing <b>Solo or Co-op with friends</b>, League of Legends is a <b>highly competitive</b>, 
+            <b>fast paced</b> action-strategy game designed for those who crave a hard fought <b>victory</b>.</p>
+            <span class="align-content-center"><a href="https://na.leagueoflegends.com/en-us/how-to-play/" target="_blank">Click here</a> to find out more</span>
+        </div>
+        <hr />
+        <div class="col-6 pl-0">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BGtROJeMPeE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+﻿@model LOLMVC.Champion
+
+@{
+    ViewData["Title"] = "Create";
+}
+    <div class="container">
+        <h1>Create</h1>
+
+        <h4>Champion</h4>
+        <hr />
+
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="ChampName" class="control-label"></label>
+                        <input asp-for="ChampName" class="form-control" />
+                        <span asp-validation-for="ChampName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ChampRole" class="control-label"></label>
+                        <input asp-for="ChampRole" class="form-control" />
+                        <span asp-validation-for="ChampRole" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ChampPrice" class="control-label"></label>
+                        <input asp-for="ChampPrice" class="form-control" />
+                        <span asp-validation-for="ChampPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ChampResource" class="control-label"></label>
+                        <input asp-for="ChampResource" class="form-control" />
+                        <span asp-validation-for="ChampResource" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Lore" class="control-label"></label>
+                        <input asp-for="Lore" class="form-control" />
+                        <span asp-validation-for="Lore" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ChampReleaseDate" class="control-label"></label>
+                        <input asp-for="ChampReleaseDate" class="form-control" />
+                        <span asp-validation-for="ChampReleaseDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ChampImage" class="control-label"></label>
+                        <input asp-for="ChampImage" class="form-control" />
+                        <span asp-validation-for="ChampImage" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

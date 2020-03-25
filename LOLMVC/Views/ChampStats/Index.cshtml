@@ -1,0 +1,68 @@
+﻿@model IEnumerable<LOLMVC.ChampStat>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+    <h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Add new Champion stat</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.WinRate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PickRate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BanRate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tier)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LanePlayed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Champ)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WinRate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PickRate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BanRate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tier)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LanePlayed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Champ.ChampId)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.StatId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.StatId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.StatId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

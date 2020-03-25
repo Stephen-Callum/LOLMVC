@@ -1,0 +1,54 @@
+﻿@model LOLMVC.ChampStat
+
+@{
+    ViewData["Title"] = "ChampStatPage";
+}
+
+<h1>ChampStatPage</h1>
+
+<div>
+    <h4>ChampStat</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WinRate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WinRate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PickRate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PickRate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BanRate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BanRate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tier)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tier)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LanePlayed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LanePlayed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Champ)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Champ.ChampId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.StatId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
